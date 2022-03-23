@@ -1,34 +1,15 @@
 import React from 'react'
-import Album from './Component/Album/Album';
-import Artists from './Component/Artist/Artist';
-import Images from './Component/Image/Images';
+import data from './data';
 
 function App() {
   return (
     <div className='App'>
-        <h1>Playlist on spotify</h1>
-        <table className='table-playlist'>
-          <tr>
-            <td rowSpan>
-                <Images/>
-            </td>
-            <td>
-                    <td>
-                        <h2><Album/></h2>
-                    </td>
-            <tr>
-            <td>
-              <h3><Artists/></h3>
-            </td>
-            </tr>
-            </td>
-            </tr>
-            <tr>
-                <td>
-                    <button className='btn-select'>Select</button>
-                </td>
-            </tr>
-        </table>
+        <h1>Playlist On Spotify</h1>
+        <img src={data.album.images[1].url} alt="Queen"></img>
+        <p id='playlist-title'>{data.album.name}</p>
+        <p id='playlist-artist'>{data.artists.artists}</p>
+        <p id='playlist-album'>{data.album.album_type}</p>
+        <button id='playlist-btn' type='button'>Select</button>
 
         <style jsx>
         {`
@@ -37,20 +18,6 @@ function App() {
             padding:20px;
             height:100vh;
             text-align:center;
-        }
-        .table-playlist{
-          background-color: #F0F8FF;
-          padding:10px;
-          margin:0px 10px 0 10px;
-          width:100%;
-        }
-        .btn-select{
-          padding:20px;
-          border:none;
-          border-radius:10px;
-          text-transform:uppercase;
-          cursor:pointer;
-          background-color:green;
         }
         `}
         </style>
