@@ -2,6 +2,11 @@ import React from 'react'
 import data from './data';
 
 function App() {
+
+  const handleClickButton = () => {
+    alert("Clicked");
+  };
+
   return (
     <div className='App'>
         <h1>Playlist On Spotify</h1>
@@ -9,7 +14,7 @@ function App() {
         <p id='playlist-title'>{data.album.name}</p>
         <p id='playlist-artist'>{data.artists.artists}</p>
         <p id='playlist-album'>{data.album.album_type}</p>
-        <button id='playlist-btn' type='button'>Select</button>
+        <button id='playlist-btn' type='button' onClick={handleClickButton}>Select</button>
 
         <style jsx>
         {`
